@@ -13,7 +13,7 @@ import javax.persistence.*;
 
 /**
  *
- * @author alfredo
+ * @author
  */
 public class Libro{
     /*Clase para crear los objetos de tipo Libro con sus respectivos parámetros*/
