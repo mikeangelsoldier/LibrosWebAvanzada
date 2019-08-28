@@ -95,7 +95,7 @@ public class LibroDAO {
          de la instrucción SQL */
         conexion = ConectaBD.obtenerConexion();
         try {
-            PreparedStatement st = conexion.prepareStatement("call insertarLibro (?, ?, ?, ?, ?);");
+            PreparedStatement st = conexion.prepareStatement("call insertarLibro (? , ? , ? , ? , ? , ? , ? , ? , ?);");
             st.setString(1, libro.getClaveISBN());
             st.setString(2, libro.getTitulo());
             st.setString(3, libro.getAutor());
@@ -123,7 +123,7 @@ public class LibroDAO {
         conexion = ConectaBD.obtenerConexion();
         try {
             PreparedStatement st = conexion.prepareStatement(
-                    "call updateLibro (?,?,?,?,?,?);");
+                    "call updateLibro (? , ? , ? , ? , ? , ? , ? , ? , ?);");
             st.setString(1, libro.getClaveISBN());
             st.setString(2, libro.getTitulo());
             st.setString(3, libro.getAutor());
@@ -151,6 +151,7 @@ public class LibroDAO {
                     "call deleteLibro(?);");
             st.setInt(1, id);
             st.execute();
+
             st.close();
             conexion.close();
 
