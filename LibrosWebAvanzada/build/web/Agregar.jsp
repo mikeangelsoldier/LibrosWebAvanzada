@@ -13,65 +13,62 @@
     </head>
     <body>
         <h2 align="center">Proporcione la informaci&oacute;n del libro a registrar</h2>
-        <form action="">
-            
+        <form action="registrar" method="POST">
+
             <table border="1" align="center">
-            <tr>
-                <td>Clave:</td> 
-                <td><input type="text" name="txtClave"></td>
-            </tr>
-             
                 <tr>
-                <td>Titulo:</td>
-                <td><input type="text" name="txtNombre"></td>
-            </tr>
-            
+                    <td>Clave:</td> 
+                    <td><input type="text" name="clave_isbn"></td>
+                </tr>
+
                 <tr>
-                <td>Autor:</td>
-                <td><input type="text" name="txtTipo"></td>
-            </tr>
-            
+                    <td>Titulo:</td>
+                    <td><input type="text" name="titulo"></td>
+                </tr>
+
                 <tr>
-                <td>Editorial:</td>
-                <td><input type="text" name="txtSatca"></td>
-            </tr>
-            
+                    <td>Autor:</td>
+                    <td><input type="text" name="autor"></td>
+                </tr>
+
                 <tr>
-                <td>Genero:</td>
-                <td><input type="text" name="txtSemestre"></td>
-            </tr>
-            
+                    <td>Editorial:</td>
+                    <td><input type="text" name="editorial"></td>
+                </tr>
+
+                <tr>
+                    <td>Genero:</td>
+                    <td><input type="text" name="genero"></td>
+                </tr>
+
                 <tr>
                     <td>Fecha de publicaci&oacute;n:</td>
-                    <td><input type="datetime" name="txtPlan"></td>
-            </tr>
-            
+                    <td><input type="date" name="fecha_publicacion"></td>
+                </tr>
+
                 <tr>
-                <td>Lugar de publicaci&oacute;n:</td>
-                <td><input type="text" name="txtUnidades"></td>
-            </tr>
-            
+                    <td>Lugar de publicaci&oacute;n:</td>
+                    <td><input type="text" name="lugar_publicacion"></td>
+                </tr>
+
                 <tr>
                     <td>Edici&oacute;n:</td>
-                <td><input type="text" name="txtDescripcion"></td>
-            </tr>
-            
+                    <td><input type="text" name="numero_edicion"></td>
+                </tr>
+
                 <tr>
                     <td>N&uacute;mero de paginas:</td>
-                <td><input type="text" name="txtCarrera"></td>
-            </tr>
-            
-               <tr>
-                    <td>Estado:</td>
-                <td><input type="text" name="txtCarrera"></td>
-            </tr>
-            
+                    <td><input type="text" name="numero_de_paginas"></td>
+                </tr>
+
+               
+
                 <tr align="center">
                     <td colspan="2"><input type="submit" name="btnGuardar" value="Añadir libro"></td>
-            </tr>
-            
-           </table>
-            
+                </tr>
+
+            </table>
+
         </form>
     </body>
 </html>

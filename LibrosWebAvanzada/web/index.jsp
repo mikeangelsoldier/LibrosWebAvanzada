@@ -20,9 +20,8 @@
             </tr>
 
             <%
-                List<Libro> libros = new ArrayList<Libro>();
                 LibroDAO gestorLibroBD = new LibroDAO();
-                libros = gestorLibroBD.getLibros();
+                List<Libro> libros = gestorLibroBD.getLibros();
 
             %>
 
@@ -46,21 +45,21 @@
             %>
             <tr>
 
-                <td><%= librosDisponibles.getClaveISBN()%> </td>
-                <td><%= librosDisponibles.getTitulo()%></td>
-                <td><%= librosDisponibles.getAutor()%></td>
-                <td><%= librosDisponibles.getEditorial()%></td>
-                <td><%= librosDisponibles.getGenero()%></td>
-                <td><%= librosDisponibles.getFechaPublicacion()%></td>
-                <td><%= librosDisponibles.getLugarPublicacion()%></td>
-                <td><%= librosDisponibles.getNumEdicion()%></td>
-                <td><%= librosDisponibles.getNumeroDePaginas()%></td>
+                <td><%= librosDisponibles.getClaveISBN() %> </td>
+                <td><%= librosDisponibles.getTitulo() %></td>
+                <td><%= librosDisponibles.getAutor() %></td>
+                <td><%= librosDisponibles.getEditorial() %></td>
+                <td><%= librosDisponibles.getGenero() %></td>
+                <td><%= librosDisponibles.getFechaPublicacion() %></td>
+                <td><%= librosDisponibles.getLugarPublicacion() %></td>
+                <td><%= librosDisponibles.getNumEdicion() %></td>
+                <td><%= librosDisponibles.getNumeroDePaginas() %></td>
 
                 <td colspan="2">   
-                    <a href="Editar.jsp"> <img src="Resources/images/edit.png"></a>
+                    <a href="Editar.jsp?id=<%= librosDisponibles.getClaveISBN()%>"> <img src="Resources/images/edit.png"></a>
 
 
-                    <a href=""> <img src="Resources/images/delete.png"></a>
+                    <a href="borrar?id=<%= librosDisponibles.getClaveISBN()%>"> <img src="Resources/images/delete.png"></a>
                 </td>
 
             </tr>
