@@ -37,10 +37,11 @@
                 <th>Edici&oacute;n</th> 
                 <th>N&uacute;mero de paginas</th>
 
-                <th>Acci&oacute;n</th>
+                <th colspan="2">Acci&oacute;n</th>
             </tr>
 
-            <%                    for (Libro librosDisponibles : libros) {
+            <%   
+                for (Libro librosDisponibles : libros) {
  
             %>
             <tr>
@@ -55,7 +56,7 @@
                 <td><%= librosDisponibles.getNumEdicion()%></td>
                 <td><%= librosDisponibles.getNumeroDePaginas()%></td>
 
-                <td>   
+                <td colspan="2">   
                     <a href="Editar.jsp"> <img src="Resources/images/edit.png"></a>
 
 

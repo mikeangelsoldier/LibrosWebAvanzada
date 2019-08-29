@@ -27,8 +27,12 @@ public class MuestraLibro extends HttpServlet {
             libros = gestorLibroBD.getLibros();
 
             if (libros != null) {
+
                 request.setAttribute("Libros", libros);//Se coloca la lista de videojuegos con el nombre de parámetro "Videojuego"
                 request.getRequestDispatcher("/index.jsp").forward(request, response);//Se envia
+
+                request.setAttribute("Libros", libros);//Se coloca la lista de libros con el nombre de parámetro "Libros"
+                request.getRequestDispatcher("/lista_libros.jsp").forward(request, response);//Se envia
             } else {
                 request.getRequestDispatcher("/noHayRegistros.jsp").forward(request, response);
             } 

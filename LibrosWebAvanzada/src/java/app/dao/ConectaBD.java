@@ -19,8 +19,8 @@ public class ConectaBD {
     private static String bd = "libros_web_avanzada";//Nombre de la base de datos
     public static String usuario = "root";
     
-    public static String passw = "GRANFALOCO10";
-    //public static String passw = "";
+   
+    public static String passw = "";
     
     public static String url = "jdbc:mysql://localhost/" + bd;
 
