@@ -12,9 +12,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.Collection;
 
-@WebServlet(name = "muestraVideojuegos", urlPatterns = {"/muestraVideojuegos"})
+@WebServlet(name = "muestraLibro", urlPatterns = {"/muestraLibro"})
 
-public class MuestraLibro extends HttpServlet {
+public class MuestraLibro extends HttpServlet { 
 
     @Override
     protected void service(HttpServletRequest request, HttpServletResponse response)
@@ -27,11 +27,15 @@ public class MuestraLibro extends HttpServlet {
             libros = gestorLibroBD.getLibros();
 
             if (libros != null) {
+
+                request.setAttribute("Libros", libros);//Se coloca la lista de videojuegos con el nombre de parámetro "Videojuego"
+                request.getRequestDispatcher("/index.jsp").forward(request, response);//Se envia
+
                 request.setAttribute("Libros", libros);//Se coloca la lista de libros con el nombre de parámetro "Libros"
                 request.getRequestDispatcher("/lista_libros.jsp").forward(request, response);//Se envia
             } else {
                 request.getRequestDispatcher("/noHayRegistros.jsp").forward(request, response);
-            }
+            } 
         } finally {
             out.close();
         }

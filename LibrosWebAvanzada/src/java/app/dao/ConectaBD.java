@@ -9,18 +9,18 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 
 /**
- *
+ * 
  * @author 
  */
 public class ConectaBD {
-
+ 
     //cambiar de acuerdo a su nombre de usuario y contraseña
     public static Connection con;
     private static String bd = "libros_web_avanzada";//Nombre de la base de datos
     public static String usuario = "root";
     
-    public static String passw = "Mike123*.";
-    //public static String passw = "";
+   
+    public static String passw = "";
     
     public static String url = "jdbc:mysql://localhost/" + bd;
 
