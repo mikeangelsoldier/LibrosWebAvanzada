@@ -1,6 +1,6 @@
-package app.dao;
+package app.controladores;
 
-import app.dominio.LibroDAO;
+import app.dao.LibroDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
