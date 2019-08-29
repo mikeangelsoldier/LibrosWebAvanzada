@@ -1,5 +1,7 @@
-package Controller;
+package app.dao;
 
+import app.dominio.LibroDAO;
+import app.dominio.Libro;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -8,7 +10,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import Model.*;
 import java.util.Collection;
 
 @WebServlet(name = "muestraVideojuegos", urlPatterns = {"/muestraVideojuegos"})
