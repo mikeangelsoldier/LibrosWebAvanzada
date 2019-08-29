@@ -1,6 +1,6 @@
-package app.dao;
+package app.controladores;
 
-import app.dominio.LibroDAO;
+import app.dao.LibroDAO;
 import app.dominio.Libro;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -13,9 +13,9 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-@WebServlet(name = "registrar", urlPatterns = {"/registrar"})
+@WebServlet(name = "actualizar", urlPatterns = {"/actualizar"})
 
-public class Insertar extends HttpServlet {
+public class Actualizar extends HttpServlet {
 
     protected void service(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -34,15 +34,17 @@ public class Insertar extends HttpServlet {
             String lugar_publicacion = request.getParameter("lugar_publicacion");
             String numero_edicion = request.getParameter("numero_edicion");
             int numero_de_paginas = Integer.parseInt(request.getParameter("numero_de_paginas"));
+           
 
-            //Se crea el objeto y se colocan sus atributos de acuerdo a lo recibido desde la página jsp
+            //Se crear el objeto pasando los parametros modificados
             Libro libro = new Libro(clave_isbn, titulo, autor, editorial, genero, fecha_publicacion, lugar_publicacion, numero_edicion, numero_de_paginas);
 
-            //Se utiliza el gestor de videojuegos para realizar la inserción de este objeto en la BD:
+            //Se crea un objeto gestor del videojuego para usar el método 
+            //que contiene la consulta para actualizar en la base de datos
             LibroDAO gestor = new LibroDAO();
-            gestor.addLibro(libro);
+            gestor.updateLibro(libro);
+            request.setAttribute("resInsert", "Se ha actuaizado el registro correctamente");
 
-            request.setAttribute("resInsert", "Se ha insertado el registro correctamente");
             request.getRequestDispatcher("/index.jsp").forward(request, response);
 
         } finally {
