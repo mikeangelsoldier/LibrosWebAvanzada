@@ -28,13 +28,13 @@ public class LibroDAO {
         conexion = ConectaBD.obtenerConexion();
     }
 
-    public Libro getLibro(int id) {
+    public Libro getLibro(String id) {
         /*Devuelve un objeto de tipo libro de acuerdo a su llave primaria */
         conexion = ConectaBD.obtenerConexion();
         Libro libro = new Libro();
         try {
             PreparedStatement ps = conexion.prepareStatement("call getLibro(?);");
-            ps.setInt(1, id);
+            ps.setString(1, id);
             rs = ps.executeQuery();
             rs.next();
             libro.setClaveISBN(rs.getString(1));
@@ -147,13 +147,13 @@ public class LibroDAO {
         }
     }
 
-    public void deleteLibro(int id) {
+    public void deleteLibro(String id) {
         /*Elimina un registro en la base de datos de acuerdo a su llave primaria */
         conexion = ConectaBD.obtenerConexion();
         try {
             PreparedStatement st = conexion.prepareStatement(
                     "call deleteLibro(?);");
-            st.setInt(1, id);
+            st.setString(1, id);
             st.execute();
 
             st.close();

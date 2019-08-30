@@ -24,7 +24,7 @@ public class Borrar extends HttpServlet {
         PrintWriter out = response.getWriter();
 
         try {
-            int id = Integer.parseInt(request.getParameter("id"));
+            String id = request.getParameter("id");
             LibroDAO gestor = new LibroDAO();
             gestor.deleteLibro(id);
 

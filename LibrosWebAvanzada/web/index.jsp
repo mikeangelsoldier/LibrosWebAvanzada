@@ -59,7 +59,7 @@
                     <a href="Editar.jsp?id=<%= librosDisponibles.getClaveISBN()%>"> <img src="Resources/images/edit.png"></a>
 
 
-                    <a href="borrar?id=<%= librosDisponibles.getClaveISBN()%>"> <img src="Resources/images/delete.png"></a>
+                    <a href="borrar?id=<%= librosDisponibles.getClaveISBN()%>" onclick="return confirm('¿Estás seguro de eliminar este libro?')"> <img src="Resources/images/delete.png"></a>
                 </td>
 
             </tr>

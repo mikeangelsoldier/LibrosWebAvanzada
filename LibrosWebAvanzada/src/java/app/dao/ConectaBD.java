@@ -20,8 +20,8 @@ public class ConectaBD {
     public static String usuario = "root";
     
    
-    //public static String passw = "";
-    public static String passw = "Mike123*.";
+    public static String passw = "";
+    //public static String passw = "Mike123*.";
     
     public static String url = "jdbc:mysql://localhost/" + bd;
 

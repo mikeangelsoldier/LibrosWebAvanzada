@@ -43,7 +43,7 @@ public class Actualizar extends HttpServlet {
             //que contiene la consulta para actualizar en la base de datos
             LibroDAO gestor = new LibroDAO();
             gestor.updateLibro(libro);
-            request.setAttribute("resInsert", "Se ha actuaizado el registro correctamente");
+            request.setAttribute("resInsert", "Se ha actualizado el registro correctamente");
 
             request.getRequestDispatcher("/index.jsp").forward(request, response);
 

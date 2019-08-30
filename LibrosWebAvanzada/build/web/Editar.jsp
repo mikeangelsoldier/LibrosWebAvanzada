@@ -13,10 +13,10 @@
         <%
             LibroDAO gestor = new LibroDAO();
 
-            Libro libro = gestor.getLibro(Integer.parseInt(request.getParameter("id")));
+            Libro libro = gestor.getLibro(request.getParameter("id"));
         %>
         <h2 align="center">Modifique la informaci&oacute;n necesaria</h2>
-        <form action="actualizar">
+        <form action="actualizar" method="POST">
 
             <table border="1" align="center">
                 <tr>
